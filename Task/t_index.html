@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorApp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .color-box {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Color checker!..</h1>
+        <div class="color-box" id="colorBox"></div>
+        <input type="text" id="colorInput" placeholder="Enter a color (e.g., red or #ff0000)">
+        <button id="applyColor">Submit</button>
+    </div>
+    <script>
+        const colorBox = document.getElementById("colorBox");
+        const colorInput = document.getElementById("colorInput");
+        const applyColorButton = document.getElementById("applyColor");
+
+        applyColorButton.addEventListener("click", () => {
+            const userColor = colorInput.value.trim();
+            if (userColor) {
+                colorBox.style.backgroundColor = userColor; // Update the color box
+            } else {
+                alert("Please enter a valid color!");
+            }
+        });
+    </script>
+</body>
+</html>
